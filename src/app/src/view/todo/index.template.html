@@ -1,0 +1,21 @@
+<article class="todo todo-index">
+  <header>
+    <h1>TODO/Index</h1>
+  </header>
+  <ul>
+    <li *ngFor="#task of model.getAll()">
+      <section>
+        <div>
+          <span><strong>#{{ task.id }}</strong></span>
+          <span>{{ task.title }}</span>
+          <span><em>{{ task.description}}</em></span>
+        </div>
+        <footer>
+          <a href="javascript:void(0)" (click)="goEdit(task.id)">[Edit]</a>
+          <a href="javascript:void(0)" (click)="goDelete(task.id)">[Delete]</a>
+        </footer>
+      </section>
+    </li>
+  </ul>
+  <button [routerLink]="['/TODO/Add']">Add task</button>
+</article>

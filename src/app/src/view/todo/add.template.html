@@ -1,0 +1,22 @@
+<article class="todo todo-add">
+  <header>
+    <h1>TODO/Add</h1>
+  </header>
+  <form (ngSubmit)="submit()">
+    <div>
+      <label>
+        <span><strong>Title</strong></span>
+        <input type="text" [(ngModel)]="title">
+      </label>
+    </div>
+    <div>
+      <label>
+        <span><strong>Description</strong></span>
+        <input type="text" [(ngModel)]="description">
+      </label>
+    </div>
+    <footer>
+      <button type="submit">Create</button>
+    </footer>
+  </form>
+</article>
