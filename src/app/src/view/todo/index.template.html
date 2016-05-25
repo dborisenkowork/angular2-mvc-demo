@@ -3,20 +3,32 @@
     <h1>TODO</h1>
     <h2>Index</h2>
   </header>
-  <ul>
-    <li *ngFor="#task of model.getAll()">
-      <section>
-        <div>
-          <span><strong>#{{ task.id }}</strong></span>
-          <span>{{ task.title }}</span>
-          <span><em>{{ task.description}}</em></span>
+  <ul class="list-group">
+    <li class="list-group-item list-group-item-heading">
+      <section class="row">
+        <div class="col-xs-1"><strong>ID</strong></div>
+        <div class="col-xs-3"><strong>Title</strong></div>
+        <div class="col-xs-5"><strong>Description</strong></div>
+        <div class="col-xs-3"><strong>Actions</strong></div>
+      </section>
+    </li>
+    <li class="list-group-item" *ngFor="#task of model.getAll()">
+      <section class="row">
+        <div class="col-xs-1">
+          <strong>#{{ task.id }}</strong>
         </div>
-        <footer>
-          <a href="javascript:void(0)" (click)="goEdit(task.id)">[Edit]</a>
-          <a href="javascript:void(0)" (click)="goDelete(task.id)">[Delete]</a>
-        </footer>
+        <div class="col-xs-3">
+          <span>{{ task.title }}</span>
+        </div>
+        <div class="col-xs-5">
+          <span>{{ task.description}}</span>
+        </div>
+        <div class="col-xs-3">
+          <button class="btn btn-success" (click)="goEdit(task.id)">Edit</button>
+          <button class="btn btn-danger" (click)="goDelete(task.id)">Delete</button>
+        </div>
       </section>
     </li>
   </ul>
-  <button [routerLink]="['/TODO/Add']" class="btn btn-primary">Add task</button>
+  <button [routerLink]="['/TODO/Add']" class="btn btn-success">Add task</button>
 </article>
