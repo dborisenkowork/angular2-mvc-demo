@@ -13,6 +13,10 @@ export class IndexAction
 {
     constructor(private model: TaskRepository, private router: Router) {}
 
+    goView(taskId: number) {
+        this.router.navigate(['/TODO/View', {id: taskId}]);
+    }
+
     goEdit(taskId: number) {
         this.router.navigate(['/TODO/Edit', {id: taskId}]);
     }

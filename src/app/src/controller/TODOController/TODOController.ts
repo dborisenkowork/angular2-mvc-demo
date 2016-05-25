@@ -5,6 +5,7 @@ import {AddAction} from "./actions/AddAction";
 import {EditAction} from "./actions/EditAction";
 import {DeleteAction} from "./actions/DeleteAction";
 import {AuthService} from "../../service/AuthService";
+import {ViewAction} from "./actions/ViewAction";
 
 @Component({
     template: '<router-outlet></router-outlet>',
@@ -33,6 +34,11 @@ import {AuthService} from "../../service/AuthService";
         name: 'Delete',
         path: '/delete/:id',
         component: DeleteAction
+    },
+    {
+        name: 'View',
+        path: '/view/:id',
+        component: ViewAction
     }
 ])
 export class TODOController

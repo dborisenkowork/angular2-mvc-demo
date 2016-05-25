@@ -1,0 +1,23 @@
+<article class="todo todo-view">
+  <header>
+    <h1>TODO</h1>
+    <h2>View</h2>
+  </header>
+  <form class="form-horizontal" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="inputViewTaskId">ID</label>
+      <input class="form-control" disabled id="inputViewTaskId" type="text" [(ngModel)]="task.id">
+    </div>
+    <div class="form-group">
+      <label for="inputEditTaskTitle">Title</label>
+      <input class="form-control" disabled id="inputEditTaskTitle" type="text" [(ngModel)]="task.title">
+    </div>
+    <div class="form-group">
+      <label for="inputEditTaskDescription">Description</label>
+      <input class="form-control" disabled id="inputEditTaskDescription" type="text" [(ngModel)]="task.description">
+    </div>
+    <footer>
+      <button type="button" (click)="back()" class="btn btn-default">Back to list</button>
+    </footer>
+  </form>
+</article>
