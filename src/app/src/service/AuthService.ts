@@ -1,9 +1,18 @@
 import {Injectable} from "angular2/core";
+import {Cookie} from 'ng2-cookies/ng2-cookies';
 
 @Injectable()
 export class AuthService
 {
+    static COOKIE_KEY = 'api-key';
+
     private token: AuthToken;
+
+    constructor() {
+        if(Cookie.get(AuthService.COOKIE_KEY)) {
+            this.token = new AuthToken(AuthService.COOKIE_KEY);
+        }
+    }
 
     isAuthenticated() {
         return !!this.token;
@@ -18,25 +27,25 @@ export class AuthService
     }
 
     signIn(email: string, password: string) {
-        this.token = new AuthToken(email, password);
+        this.token = new AuthToken('someAPIKey');
+
+        Cookie.set(AuthService.COOKIE_KEY, this.token.apiKey);
     }
 
     signUp(email: string, password: string) {
-        this.token = new AuthToken(email, password);
+        this.token = new AuthToken('someAPIKey');
+
+        Cookie.set(AuthService.COOKIE_KEY, this.token.apiKey);
     }
 
     signOut() {
         this.token = undefined;
+
+        Cookie.delete(AuthService.COOKIE_KEY);
     }
 }
 
 class AuthToken
 {
-    email: string;
-    password: string;
-
-    constructor(email: string, password: string) {
-        this.email = email;
-        this.password = password;
-    }
+    constructor(public apiKey: string) {}
 }
