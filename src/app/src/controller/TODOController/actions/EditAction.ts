@@ -30,4 +30,8 @@ export class EditAction
         this.model.updateTask(this.id, this.title, this.description);
         this.router.navigate(['/TODO/Index']);
     }
+
+    back() {
+        this.router.navigate(['/TODO/Index']);
+    }
 }

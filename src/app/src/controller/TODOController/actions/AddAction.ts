@@ -18,4 +18,8 @@ export class AddAction
         this.model.createTask(this.title, this.description);
         this.router.navigate(['/TODO/Index']);
     }
+
+    back() {
+        this.router.navigate(['/TODO/Index']);
+    }
 }
