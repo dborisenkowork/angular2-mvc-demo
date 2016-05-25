@@ -1,12 +1,34 @@
 <div>
-  <nav>
-    <ul>
-      <li><a [routerLink]="['Auth']">Auth</a></li>
-      <li><a [routerLink]="['Index']">Index</a></li>
-      <li><a [routerLink]="['TODO']">TODO</a></li>
-    </ul>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" [routerLink]="['Index']">MVC App</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a [routerLink]="['TODO']">TODO</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <li>
+            <a [routerLink]="['Auth/SignIn']"  *ngIf="! auth.isAuthenticated()">
+              <span>Sign In</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['Auth/SignUp']"  *ngIf="! auth.isAuthenticated()">
+              <span>Sign Up</span>
+            </a>
+          </li>
+          <li>
+            <a [routerLink]="['Auth/SignOut']" *ngIf="  auth.isAuthenticated()">
+              <span>Sign Out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
   </nav>
-  <div>
+  <div class="container-fluid">
     <router-outlet></router-outlet>
   </div>
 </div>

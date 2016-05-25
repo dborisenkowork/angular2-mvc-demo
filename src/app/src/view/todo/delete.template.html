@@ -3,9 +3,9 @@
     <h1>TODO</h1>
     <h2>Delete</h2>
   </header>
-  <p>Delete <strong>{{task.title}}#{{task.id}}</strong>?</p>
+  <p class="well">Delete <strong>{{task.title}}#{{task.id}}</strong>?</p>
   <footer>
-    <button (click)="yes()">Yes</button>
-    <button (click)="no()">No</button>
+    <button class="btn btn-default" (click)="no()">No</button>
+    <button class="btn btn-primary" (click)="yes()">Yes</button>
   </footer>
 </article>

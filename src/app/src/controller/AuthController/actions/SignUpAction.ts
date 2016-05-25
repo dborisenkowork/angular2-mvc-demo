@@ -4,7 +4,7 @@ import {AuthService} from "../../../service/AuthService";
 import {Router} from "angular2/router";
 
 @Component({
-    template: require('./../../../view/auth/sign-out.template.html')
+    template: require('./../../../view/auth/sign-up.template.html')
 })
 export class SignUpAction
 {

@@ -3,21 +3,17 @@
     <h1>TODO</h1>
     <h2>Edit</h2>
   </header>
-  <form (ngSubmit)="submit()">
-    <div>
-      <label>
-        <span><strong>Title</strong></span>
-        <input type="text" [(ngModel)]="title">
-      </label>
+  <form class="form-horizontal" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="inputEditTaskTitle">Title</label>
+      <input class="form-control" id="inputEditTaskTitle" type="text" [(ngModel)]="title">
     </div>
-    <div>
-      <label>
-        <span><strong>Description</strong></span>
-        <input type="text" [(ngModel)]="description">
-      </label>
+    <div class="form-group">
+      <label for="inputEditTaskDescription">Description</label>
+      <input class="form-control" id="inputEditTaskDescription" type="text" [(ngModel)]="description">
     </div>
     <footer>
-      <button type="submit">Update</button>
+      <button type="submit" class="btn btn-primary">Update</button>
     </footer>
   </form>
 </article>

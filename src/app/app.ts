@@ -7,6 +7,7 @@ import 'reflect-metadata';
 import 'rxjs/Rx';
 
 require('zone.js');
+require('./../node_modules/bootstrap/dist/css/bootstrap.min.css');
 
 import {Component} from "angular2/core";
 import {ROUTER_DIRECTIVES, RouteConfig, ROUTER_PROVIDERS} from "angular2/router";
@@ -51,6 +52,7 @@ import {AuthService} from "./src/service/AuthService";
 ])
 export class App
 {
+    constructor(private auth: AuthService) {}
 }
 
 document.addEventListener('DOMContentLoaded', () => {
