@@ -1,0 +1,19 @@
+<article class="auth auth-sign-in">
+  <header>
+    <h1>Auth</h1>
+    <h2>Sign In</h2>
+  </header>
+  <form class="form-horizontal" (ngSubmit)="submit()">
+    <div class="form-group">
+      <label for="inputSignInEmail">Email</label>
+      <input id="inputSignInEmail" [(ngModel)]="email" type="email" class="form-control" placeholder="demo@gmail.com">
+    </div>
+    <div class="form-group">
+      <label for="inputSignInPassword">Password</label>
+      <input id="inputSignInPassword" [(ngModel)]="password" type="password" class="form-control" placeholder="*******">
+    </div>
+    <footer class="form-group">
+      <button type="submit" class="btn btn-primary">Sign In</button>
+    </footer>
+  </form>
+</article>

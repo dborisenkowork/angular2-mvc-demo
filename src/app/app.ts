@@ -16,6 +16,8 @@ import {IndexController} from "./src/controller/IndexController/IndexController"
 import {TODOController} from "./src/controller/TODOController/TODOController";
 import {bootstrap} from "angular2/platform/browser";
 import {TaskRepository} from "./src/model/TaskRepository";
+import {AuthController} from "./src/controller/AuthController/AuthController";
+import {AuthService} from "./src/service/AuthService";
 
 @Component({
     selector: 'mvc-app',
@@ -25,7 +27,8 @@ import {TaskRepository} from "./src/model/TaskRepository";
         CORE_DIRECTIVES,
     ],
     providers: [
-        TaskRepository
+        TaskRepository,
+        AuthService,
     ]
 })
 @RouteConfig([
@@ -34,6 +37,11 @@ import {TaskRepository} from "./src/model/TaskRepository";
         path: '/index/...',
         useAsDefault: true,
         component: IndexController
+    },
+    {
+        name: 'Auth',
+        path: '/auth/...',
+        component: AuthController
     },
     {
         name: 'TODO',

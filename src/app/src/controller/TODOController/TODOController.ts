@@ -1,9 +1,10 @@
 import {Component} from "angular2/core";
-import {ROUTER_DIRECTIVES, RouteConfig} from "angular2/router";
+import {ROUTER_DIRECTIVES, RouteConfig, Router} from "angular2/router";
 import {IndexAction} from "./actions/IndexAction";
 import {AddAction} from "./actions/AddAction";
 import {EditAction} from "./actions/EditAction";
 import {DeleteAction} from "./actions/DeleteAction";
+import {AuthService} from "../../service/AuthService";
 
 @Component({
     template: '<router-outlet></router-outlet>',
@@ -36,4 +37,9 @@ import {DeleteAction} from "./actions/DeleteAction";
 ])
 export class TODOController
 {
+    constructor(private authService: AuthService, private router: Router) {
+        if(! authService.isAuthenticated()) {
+            router.navigate(['/Auth/SignIn']);
+        }
+    }
 }
